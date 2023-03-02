@@ -1,0 +1,178 @@
+:root {
+    --dark: #3b465a;
+    --darker: #1F2937;
+    --darkest: #111827;
+    --gray: #687280;
+    --light: #EEE;
+    --green: #67f391;
+    --yellow: #f6f45c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Fira sans', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--dark);
+    color: #FFF;
+}
+
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    background-image: linear-gradient(to right, var(--green), var(--yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+#item-form {
+    display: flex;
+}
+
+#item-input, #item-submit, .text, button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#item-input {
+    flex: 1 1 0%;
+    background-color: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 1.25rem;
+}
+
+#item-input::placeholder {
+    color: var(--gray);
+}
+
+#item-submit {
+    color: var(--pink);
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--green), var(--yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#item-submit:hover {
+    opacity: 0.8;
+}
+
+#item-submit:active {
+    opacity: 0.6;
+}
+
+main {
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.item-list {
+    padding: 1rem;
+}
+
+.item-list h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--green);
+    margin-bottom: 1rem;
+}
+
+#items .item {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+#items .item .item-content {
+    display: flex;
+    margin: 0 0.5rem;
+}
+
+#items .item .item-content .item-completed {
+    display: flex;
+    width: 20%;
+    cursor: pointer;
+    margin: 0 -0.5rem;
+}
+
+.item-completed:checked + .text {
+    background-image: linear-gradient(to right, var(--green), var(--gray));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: line-through;
+}
+
+#items .item .item-content .text {
+    color: var(--yellow);
+    font-size: 1.125rem;
+    width: 80%;
+    display: flex;
+    transition: 0.4s;
+}
+
+
+#items .item .item-content .text:not(:read-only) {
+    background-image: linear-gradient(to right, var(--light), var(--gray));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#items .item .item-actions {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.item .item-actions button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.item .item-actions button:hover {
+    opacity: 0.8;
+}
+
+.item .item-actions .edit {
+    background-image: linear-gradient(to right, var(--yellow), var(--gray));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.item .item-actions .save {
+    background-image: linear-gradient(to right, var(--green), var(--gray));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.item .item-actions .delete {
+    color: crimson;
+}
